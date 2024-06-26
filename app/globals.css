@@ -87,6 +87,8 @@ header .img{
   align-items: center;
   justify-content: center;
   position: relative;
+}
+.hero-block.bio{
   background-color: black;
 }
 .hero-block_text{
