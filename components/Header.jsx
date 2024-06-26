@@ -1,18 +1,23 @@
+'use client'
 import React from 'react'
 import { Button } from './Button'
+import Link from 'next/link'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 
 export const Header = () => {
+
   return (
     <header>
       <div className="site-container">
-        <img src="/img/header-logo.svg" alt="" />
+        <Link href="/" className='header-logo-link'><img src="/img/header-logo.svg" alt="" /></Link>
         <nav className='header-menu'>
-          <a href="">Главная</a>
-          <a href="">О нас</a>
-          <a href="">Услуги</a>
-          <a href="">Цены</a>
-          <a href="">Вопросы и ответы</a>
-          <a href="">Контакты</a>
+          <Link href="/">Главная</Link>
+          <Link href="/about">О нас</Link>
+          <Link href=".#services">Услуги</Link>
+          <Link href=".#prices">Цены</Link>
+          <Link href=".#faq">Вопросы и ответы</Link>
+          <Link href=".#contacts">контакты</Link>
         </nav>
         <Button text="">ЗАКАЗАТЬ/УЗНАТЬ ПОДРОБНЕЕ</Button>
       </div>

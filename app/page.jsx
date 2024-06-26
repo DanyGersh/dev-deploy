@@ -51,6 +51,12 @@ export default function Home() {
     }
   ]
 
+  //useEffect(async () => {
+  //  const response = await fetch('http://45.132.19.189/api/b/1dc3d30d-6df8-4cc0-ab44-663f931439e4')
+  //  const data = await response.json()
+  //  console.log(data);
+  //}, [])
+
   return (
     <div className="page">
       <Header />
@@ -59,7 +65,7 @@ export default function Home() {
         <span><b>Страница памяти</b> – это новый шаг современных технологий, позволяющий сохранить историю жизни и наследие усопшего навечно.</span>
         <QRbg />
       </div>
-      <div className="section main-page_services">
+      <div className="section main-page_services anchor" id="services">
         <div className="site-container">
           <div className="page-section_header">
             <h2 className="">Услуги</h2>
@@ -98,7 +104,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="section main-page_price">
+      <div className="section main-page_price anchor" id="prices">
         <div className="site-container">
           <div className="page-section_header">
             <h2>Сколько стоит</h2>
@@ -148,7 +154,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="section main-page_faq">
+      <div className="section main-page_faq anchor" id="faq">
         <div className="site-container">
           <div className="page-section_header">
             <h2>Часто задаваемые вопросы</h2>
@@ -157,7 +163,7 @@ export default function Home() {
           <MainPageFAQ data={faq} />
         </div>
       </div>
-      <div className="main-page_contacts">
+      <div className="main-page_contacts anchor" id="contacts">
         <div className="site-container">
           <div className="page-section_header">
             <h2>Наши контакты</h2>
