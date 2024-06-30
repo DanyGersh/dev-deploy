@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { MainPageFAQ } from "@/components/MainPageFAQ";
 import React from "react";
 import { Footer } from "@/components/Footer";
+import { PopUp } from "@/components/PopUp";
 
 export default function Home() {
   const faq = [
@@ -167,7 +168,7 @@ export default function Home() {
         <div className="site-container">
           <div className="page-section_header">
             <h2>Наши контакты</h2>
-            <p>Мы всегда на связи и поэтому связаться с нами можно в любой день.<br/>По телефону ответим с 9 до 21 часа по московскому времени.<br/>А оставить заявку и приобрести QR-код вместе с индивидуальной страничкой памяти можно в любой день и час.</p>
+            <p>Мы всегда на связи и поэтому связаться с нами можно в любой день.<br />По телефону ответим с 9 до 21 часа по московскому времени.<br />А оставить заявку и приобрести QR-код вместе с индивидуальной страничкой памяти можно в любой день и час.</p>
           </div>
           <div className="main-page_contacts_container" >
             <div className="main-page_contact-card">
@@ -186,10 +187,10 @@ export default function Home() {
               <p>Мы находимся в Москве, а работаем по всей России</p>
             </div>
           </div>
-          <QRbg type="contacts"/>
+          <QRbg type="contacts" />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

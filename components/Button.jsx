@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Button = ({children, ...props}) => {
+export const Button = ({click, children, ...props}) => {
   return (
-    <button className={'btn ' + props.className} type={props.type}>
+    <button onClick={props.onClick} className={props.className!==undefined ? 'btn ' + props.className : 'btn'} type={props.type}>
       {children}
     </button>
   )

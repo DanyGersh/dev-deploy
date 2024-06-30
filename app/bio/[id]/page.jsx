@@ -2,10 +2,14 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { HeroBlock } from '@/components/HeroBlock'
 import { HorizontalGallery } from '@/components/HorizontalGallery'
+import { HorizontalGalleryElement } from '@/components/HorizontalGallery'
+import { Remembers, RemembersElement } from '@/components/Remembers'
 import { notFound } from 'next/navigation'
 
 async function fetchUser(id) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_LINK + "b/" + id)
+  const res = await fetch(process.env.NEXT_PUBLIC_API_LINK + "b/" + id, {
+    cache: 'no-store',
+  });
   if (!res.ok) return undefined
   return res.json()
 }
@@ -55,22 +59,76 @@ export default async function Info({ params }) {
     gallery_images: [
       {
         src: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
-        type: "image"
+        type: "image",
+        title: "Заголовок изображения"
       },
       {
         src: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
-        type: "image"
+        type: "image",
+        title: "Заголовок изображения"
       },
       {
         src: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
-        type: "image"
+        type: "image",
+        title: "Заголовок изображения"
       },
       {
         src: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
-        type: "image"
+        type: "image",
+        title: "Заголовок изображения"
       },
     ]
   }
+
+  let debugRemembers = {
+    "remembers": [
+      {
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. ",
+        "client": {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "full_name": "Имя фамилия",
+          "date_birth": "2024-06-27",
+          "avatar": {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "path": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676295972133291028.png",
+            "filename": "string",
+            "type": "string",
+            "is_gallery": true,
+            "created_at": "2024-06-27T10:21:46.358Z"
+          }
+        },
+        "who": "Разработчик"
+      },
+      {
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris ",
+        "client": {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "full_name": "Даниэль Проверкович",
+          "date_birth": "2024-06-27",
+          "avatar": {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "path": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676295972133291028.png",
+            "filename": "string",
+            "type": "string",
+            "is_gallery": true,
+            "created_at": "2024-06-27T10:21:46.358Z"
+          }
+        },
+        "who": "Разработчик"
+      }
+    ]
+  }
+
+  let debugBio = [
+    {
+      title: "Заголовок 1",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar ",
+      img: "srclink",
+      img_desc: "Описание фотографии",
+      img_style: 1,
+      text_style: "left"
+    }
+  ]
 
   let formatedMap = `https://maps.google.com/maps?q=${data.burial_latitude},${data.burial_longitude}&hl=ru;z=14&amp&output=embed`
 
@@ -79,11 +137,11 @@ export default async function Info({ params }) {
   } else {
     return (
       <div className='page'>
-        <Header />
+        <Header type="bio" bio={data}/>
         <HeroBlock type="bio" bio={data} />
         <div className="bio-page_epitaph section bio">
           <div className="site-container">
-            <div className="page-section_header bio">
+            <div className="page-section_header bio" id='epitaph'>
               <h2>ЭПИГРАФ</h2>
             </div>
             <p>{data.epitaph}</p>
@@ -91,7 +149,7 @@ export default async function Info({ params }) {
         </div>
         <div className="bio-page_short-info section bio">
           <div className="site-container">
-            <div className="page-section_header bio">
+            <div className="page-section_header bio" id='short_info'>
               <h2>КРАТКАЯ ИНФОРМАЦИЯ</h2>
             </div>
             <div className="bio-page_short-info-container">
@@ -152,20 +210,28 @@ export default async function Info({ params }) {
             </div>
           </div>
         </div>
+        <div className="bio-page_text section bio">
+          <div className="site-container" id='bio'>
+            <div className="page-section_header bio">
+              <h2>БИОГРАФИЯ</h2>
+              <p>История жизни</p>
+            </div>
+          </div>
+        </div>
         <div className="bio-page_burial section">
           <div className="site-container">
-            <div className="page-section_header bio">
+            <div className="page-section_header bio" id='gallery'>
               <h2>ГАЛЕРЕЯ</h2>
             </div>
           </div>
-          {debugGallery.gallery_videos!==undefined && <HorizontalGallery>
+          {debugGallery.gallery_videos !== undefined && <HorizontalGallery>
             {debugGallery.gallery_videos.map((elem, index) =>
-              <HorizontalGallery.Element data={elem} key={index}/>
+              <HorizontalGalleryElement data={elem} id={index} key={index} />
             )}
           </HorizontalGallery>}
-          {debugGallery.gallery_images!==undefined && <HorizontalGallery>
+          {debugGallery.gallery_images !== undefined && <HorizontalGallery>
             {debugGallery.gallery_images.map((elem, index) =>
-              <HorizontalGallery.Element data={elem} key={index}/>
+              <HorizontalGalleryElement data={elem} id={index} key={index} />
             )}
           </HorizontalGallery>}
         </div>
@@ -175,7 +241,7 @@ export default async function Info({ params }) {
               <h2>ЗАХОРОНЕНИЕ</h2>
               <p>{data.burial_landmark}</p>
             </div>
-            <div className="bio-page_burial_container">
+            <div className="bio-page_burial_container" id='burial'>
               <div className="bio-page_burial_left">
                 <div className="burial-label">
                   <img src="/icons/point_L.svg" alt="" />
@@ -203,6 +269,20 @@ export default async function Info({ params }) {
                 <iframe className='bio-page_burial_map' src={formatedMap}></iframe>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="bio-page_burial section">
+          <div className="site-container">
+            <div className="page-section_header bio" id='remembers'>
+              <h2>ВОСПОМИНАНИЯ</h2>
+            </div>
+          </div>
+          <div className="site-container">
+            {debugRemembers.remembers !== undefined && <Remembers>
+              {debugRemembers.remembers.map((elem, index) =>
+                <RemembersElement data={elem} id={index} key={index} />
+              )}
+            </Remembers>}
           </div>
         </div>
         <Footer type="small" bg="blue" />

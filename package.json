@@ -12,6 +12,7 @@
     "next": "^14.2.4",
     "react": "^18",
     "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-responsive": "^10.0.0"
   }
 }
