@@ -10,45 +10,80 @@ export const PopUp = ({close, ...props}) => {
   const [phone, setPhone] = useState('');
   const [comment, setComment] = useState('');
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false)
+
+  const headers = new Headers();
+  headers.set('Authorization', 'Basic ' + btoa("admin_front" + ":" + "gf54GH3gpxM3"));
+
+  async function SendRequest(data){
+    fetch(process.env.NEXT_PUBLIC_API_LINK + "orders/", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      setLoading(false)
+      alert("Ваш запрос успешно отправлен. Мы свяжемся с вами в ближайшее время")
+      setError(false)
+      setName('')
+      setEmail('')
+      setPhone('')
+      setComment('')
+      close()
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Что-то пошло не так. Попробуйте снова")
+    });
+  }
 
   function send(kind){
     if(kind==="email"){
       if(email.trim()!==''){
-        alert('АТПРАВЛЕН')
-        setError(false)
-        setName('')
-        setEmail('')
-        setPhone('')
-        setComment('')
-        close()
+        setLoading(true)
+        SendRequest({
+          full_name: name,
+          email: type==="email" || type==="both" ? email : "Не указано",
+          phone: type==="phone" || type==="both" ? phone : "Не указано",
+          product_name: "Продукт",
+          comment: comment.trim()
+        })
       } else {
         setError(true)
+        setLoading(false)
       }
     }
     if(kind==="phone"){
       if(phone.trim()!==''){
-        alert('АТПРАВЛЕН')
-        setError(false)
-        setName('')
-        setEmail('')
-        setPhone('')
-        setComment('')
-        close()
+        setLoading(false)
+        SendRequest({
+          full_name: name,
+          email: type==="email" || type==="both" ? email : "Не указано",
+          phone: type==="phone" || type==="both" ? phone : "Не указано",
+          product_name: "Продукт",
+          comment: comment.trim()
+        })
       } else {
         setError(true)
+        setLoading(false)
       }
     }
     if(kind==="both"){
       if(email.trim()!=='' && phone.trim()!==''){
-        alert('АТПРАВЛЕН')
-        setError(false)
-        setName('')
-        setEmail('')
-        setPhone('')
-        setComment('')
-        close()
+        setLoading(true)
+        SendRequest({
+          full_name: name,
+          email: type==="email" || type==="both" ? email : "Не указано",
+          phone: type==="phone" || type==="both" ? phone : "Не указано",
+          product_name: "Продукт",
+          comment: comment.trim()
+        })
       } else {
         setError(true)
+        setLoading(false)
       }
     }
   }
@@ -87,7 +122,7 @@ export const PopUp = ({close, ...props}) => {
         <p>Вы не заполнили все необходимые поля</p>
       </div>}
       <div className="pop-up_button">
-        <Button onClick={() => send(type)} type="blue">ЗАКАЗАТЬ</Button>
+        <Button loading={loading.toString()} onClick={() => send(type)} type="blue">ЗАКАЗАТЬ</Button>
       </div>
     </div>
   )

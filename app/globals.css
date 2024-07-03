@@ -38,6 +38,10 @@ body {
   border-radius: 8.69px;
   font-weight: 400;
 }
+.btn[loading="true"]{
+  opacity: .5;
+  pointer-events: none;
+}
 .site-container{
   max-width: 1350px;
   margin: 0 auto;
@@ -1113,6 +1117,87 @@ footer .site-container{
 }
 
 
+.bio-page_text_block{
+  display: flex;
+  margin-bottom: 44px;
+}
+.bio-page_text_image img{
+  width: 200px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.bio-page_text_image h3{
+  color: #DEDEDE;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  margin: 10px 0px;
+}
+.bio-page_text_block p{
+  color: #DEDEDE;
+  font-size: 18px;
+  font-weight: 400;
+}
+.bio-page_text_block .header{
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0px 0px 25px 0px;
+}
+.bio-page_text_content{
+  margin-left: 44px;
+}
+
+.bio-page_text_block[variant="right"]{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.bio-page_text_block[variant="right"] .bio-page_text_content{
+  margin-left: 0;
+  margin-right: 44px;
+}
+.bio-page_text_block[variant="right"] .bio-page_text_image img{
+  width: 362px;
+  height: 478px;
+}
+.bio-page_text_block[variant="full"]{
+  display: flex;
+  flex-direction: column-reverse;
+}
+.bio-page_text_block[variant="full"] .bio-page_text_content{
+  margin-left: 0;
+  margin-right: 0px;
+  margin-bottom: 20px;
+}
+.bio-page_text_block[variant="full"] .bio-page_text_image img{
+  width: 100%;
+  height: 335px;
+}
+.bio-page_text_block[variant="leftB"]{
+  display: flex;
+}
+.bio-page_text_block[variant="leftB"] .bio-page_text_content{
+  margin-right: 0px;
+}
+.bio-page_text_block[variant="leftB"] .bio-page_text_image img{
+  width: 415px;
+  height: 478px;
+}
+.bio-page_text_block[variant="rightM"]{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.bio-page_text_block[variant="rightM"] .bio-page_text_content{
+  margin-left: 0;
+  margin-right: 44px;
+}
+.bio-page_text_block[variant="rightM"] .bio-page_text_image img{
+  width: 415px;
+  height: 327px;
+}
+
+
 #epitaph,
 #short_info,
 #bio,
@@ -1222,5 +1307,28 @@ footer .site-container{
   }
   .horizontal-gallery_element{
     margin-right: 15px;
+  }
+  .bio-page_text_block{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .bio-page_text_block[variant="rightM"]{
+    flex-direction: column-reverse;
+  }
+  .bio-page_text_block[variant="right"]{
+    flex-direction: column-reverse;
+  }
+  .bio-page_text_block .bio-page_text_content{
+    margin-left: 0;
+    margin-right: 44px;
+  }
+  .bio-page_text_block .bio-page_text_image img,
+  .bio-page_text_block[variant="rightM"] .bio-page_text_image img,
+  .bio-page_text_block[variant="leftB"] .bio-page_text_image img,
+  .bio-page_text_block[variant="full"] .bio-page_text_image img,
+  .bio-page_text_block[variant="right"] .bio-page_text_image img
+  {
+    width: 100%;
+    height: 327px;
   }
 }
