@@ -7,11 +7,19 @@ import { Remembers, RemembersElement } from '@/components/Remembers'
 import { notFound } from 'next/navigation'
 
 async function fetchUser(id) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_LINK + "b/" + id, {
-    cache: 'no-store',
-  });
-  if (!res.ok) return undefined
-  return res.json()
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_LINK + "b/" + id, {
+      cache: 'no-store',
+    });
+    if (!res.ok) {
+      console.error(`Failed to fetch user: ${res.status} ${res.statusText}`);
+      return undefined;
+    }
+    return res.json();
+  } catch (error) {
+    console.error('An error occurred while fetching the user:', error);
+    notFound()
+  }
 }
 
 
@@ -130,7 +138,7 @@ export default async function Info({ params }) {
     }
   ]
 
-  let formatedMap = `https://maps.google.com/maps?q=${data.burial_latitude},${data.burial_longitude}&hl=ru;z=14&amp&output=embed`
+  let formatedMap = data!==undefined && `https://maps.google.com/maps?q=${data.burial_latitude},${data.burial_longitude}&hl=ru;z=14&amp&output=embed`
 
   if (!data) {
     notFound()
