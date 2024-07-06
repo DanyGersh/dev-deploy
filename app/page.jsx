@@ -7,6 +7,7 @@ import { MainPageFAQ } from "@/components/MainPageFAQ";
 import React from "react";
 import { Footer } from "@/components/Footer";
 import { PopUp } from "@/components/PopUp";
+import Link from "next/link";
 
 export default function Home() {
   const faq = [
@@ -75,7 +76,7 @@ export default function Home() {
             <p className="service-desc">На надгробии размещается QR код, при сканировании которого , осуществляется переход на страницу памяти усопшего.<br />Благодаря этой технологии будущие поколения смогут узнавать наследие, генеалогическое<br />древо и всю историю жизни своих предков.</p>
             <div className="buttons">
               <Button type="blue">УЗНАТЬ ПОДРОБНЕЕ / ЗАКАЗАТЬ</Button>
-              <Button type="blue">ПРИМЕР СТРАНИЦА ПАМЯТИ</Button>
+              <Link href="/bio/1dc3d30d-6df8-4cc0-ab44-663f931439e4#remembers" target="_blank"><Button type="blue">ПРИМЕР СТРАНИЦЫ ПАМЯТИ</Button></Link>
             </div>
           </div>
         </div>

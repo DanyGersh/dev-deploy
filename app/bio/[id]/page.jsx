@@ -46,46 +46,46 @@ export default async function Info({ params }) {
   let debugGallery = {
     gallery_videos: [
       {
-        src: "https://video-previews.elements.envatousercontent.com/h264-video-previews/49b9f938-fe01-4c3d-89b3-83c3f996d380/10528286.mp4",
+        path: "https://video-previews.elements.envatousercontent.com/h264-video-previews/49b9f938-fe01-4c3d-89b3-83c3f996d380/10528286.mp4",
         type: "video",
-        title: "Заголовок видео"
+        filename: "Заголовок видео"
       },
       {
-        src: "b5Fh7TaTkEU",
+        path: "b5Fh7TaTkEU",
         type: "youtube",
-        title: "Заголовок видео"
+        filename: "Заголовок видео"
       },
       {
-        src: "https://video-previews.elements.envatousercontent.com/h264-video-previews/49b9f938-fe01-4c3d-89b3-83c3f996d380/10528286.mp4",
+        path: "https://video-previews.elements.envatousercontent.com/h264-video-previews/49b9f938-fe01-4c3d-89b3-83c3f996d380/10528286.mp4",
         type: "video",
-        title: "Заголовок видео"
+        filename: "Заголовок видео"
       },
       {
-        src: "b5Fh7TaTkEU",
+        path: "b5Fh7TaTkEU",
         type: "youtube",
-        title: "Заголовок видео"
+        filename: "Заголовок видео"
       }
     ],
     gallery_images: [
       {
-        src: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
+        path: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
         type: "image",
-        title: "Заголовок изображения"
+        filename: "Заголовок изображения"
       },
       {
-        src: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
+        path: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
         type: "image",
-        title: "Заголовок изображения"
+        filename: "Заголовок изображения"
       },
       {
-        src: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
+        path: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
         type: "image",
-        title: "Заголовок изображения"
+        filename: "Заголовок изображения"
       },
       {
-        src: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
+        path: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
         type: "image",
-        title: "Заголовок изображения"
+        filename: "Заголовок изображения"
       },
     ]
   }
@@ -128,103 +128,6 @@ export default async function Info({ params }) {
       }
     ]
   }
-
-  let debugBio = [
-    {
-      title: "Заголовок 1",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar ",
-      img: "srclink",
-      img_desc: "Описание фотографии",
-      img_style: 1,
-      text_style: "left"
-    }
-  ]
-
-  let debugHTML = `<div className="bio-page_text_block" variant="left">
-              <div className="bio-page_text_image">
-                <img className='bio-page_text_image' src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg" alt="" />
-                <h3>Описание фотограции</h3>
-              </div>
-              <div className="bio-page_text_content">
-                <h2 className='header'>Заголовок</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies.
-                  <br /><br />
-                  Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat
-                  <br /><br />
-                  scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar
-                </p>
-              </div>
-            </div>
-            <div className="bio-page_text_block" variant="right">
-              <div className="bio-page_text_image">
-                <img className='bio-page_text_image' src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg" alt="" />
-                <h3>Описание фотограции</h3>
-              </div>
-              <div className="bio-page_text_content">
-                <h2 className='header'>Заголовок</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies.
-                  <br /><br />
-                  Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat
-                  <br /><br />
-                  scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar
-                </p>
-              </div>
-            </div>
-            <div className="bio-page_text_block" variant="full">
-              <div className="bio-page_text_image">
-                <img className='bio-page_text_image' src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg" alt="" />
-                <h3>Описание фотограции</h3>
-              </div>
-              <div className="bio-page_text_content">
-                <h2 className='header'>Заголовок</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies.
-                  <br /><br />
-                  Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat
-                  <br /><br />
-                  scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar
-                </p>
-              </div>
-            </div>
-            <div className="bio-page_text_block" variant="full">
-              <div className="bio-page_text_content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies.
-                  <br /><br />
-                  Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat
-                  <br /><br />
-                  scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar
-                </p>
-              </div>
-            </div>
-            <div className="bio-page_text_block" variant="leftB">
-              <div className="bio-page_text_image">
-                <img className='bio-page_text_image' src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg" alt="" />
-                <h3>Описание фотограции</h3>
-              </div>
-              <div className="bio-page_text_content">
-                <h2 className='header'>Заголовок</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies.
-                  <br /><br />
-                  Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat
-                  <br /><br />
-                  scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar
-                </p>
-              </div>
-            </div>
-            <div className="bio-page_text_block" variant="rightM">
-              <div className="bio-page_text_image">
-                <img className='bio-page_text_image' src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg" alt="" />
-                <h3>Описание фотограции</h3>
-              </div>
-              <div className="bio-page_text_content">
-                <h2 className='header'>Заголовок</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies.
-                  <br /><br />
-                  Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat
-                  <br /><br />
-                  scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris pellentesque pulvinar
-                </p>
-              </div>
-            </div>`
 
   let formatedMap = data !== undefined && `https://maps.google.com/maps?q=${data.burial_latitude},${data.burial_longitude}&hl=ru;z=14&amp&output=embed`
 

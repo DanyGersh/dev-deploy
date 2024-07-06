@@ -3,10 +3,10 @@ import React from 'react'
 import { Button } from './Button'
 
 export const Footer = (props) => {
-  if(props.type==="small"){
-    return(
+  if (props.type === "small") {
+    return (
       <footer className={'small ' + props.bg}>
-        <div className="site-container">
+        <div className="site-container fotcont">
           <span>©</span><span>{new Date().getFullYear()} Наше Наследие. Все права защищены</span>
         </div>
       </footer>
@@ -29,13 +29,16 @@ export const Footer = (props) => {
               <Link href="/">ГЛАВНАЯ <img src="/icons/arrow_up_right.svg" alt="" /></Link>
               <Link href="/about">О НАС <img src="/icons/arrow_up_right.svg" alt="" /></Link>
             </div>
-            <div/>
+            <div />
           </div>
           <div className="footer-right">
-            <h3>Перед приобретением вы можете ознакомится<br/>с примером будущей страницы памяти</h3>
+            <h3>Перед приобретением вы можете ознакомится<br />с примером будущей страницы памяти</h3>
             <Button type="blue">УЗНАТЬ ПОДРОБНЕЕ/ЗАКАЗАТЬ</Button>
             <Button type="blue">ПРИМЕР СТРАНИЦА ПАМЯТИ</Button>
           </div>
+        </div>
+        <div className="mob-copyright">
+          <span>©</span><span>{new Date().getFullYear()} Наше Наследие. Все права защищены</span>
         </div>
       </footer>
     )
