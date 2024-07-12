@@ -990,7 +990,6 @@ footer .site-container{
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
@@ -1008,6 +1007,7 @@ footer .site-container{
   background-color: #19426A;
   border: solid #3571A3 2.3px;
   border-radius: 17.25px;
+  height: max-content;
 }
 .pop-up_header{
   display: flex;
@@ -1388,6 +1388,10 @@ footer .site-container{
   .main-page_services .buttons{
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+  .main-page_services{
+    padding-bottom: 61px;
   }
   .main-page_whywe_cards{
     display: flex;
@@ -1464,6 +1468,7 @@ footer .site-container{
   }
   footer .mob-copyright span{
     font-weight: 300 !important;
+    font-size: 14px;
   }
   .bio-page_burial_container{
     display: flex;
@@ -1486,9 +1491,23 @@ footer .site-container{
   .fotcont{
     flex-direction: row !important;
   }
+  .hero-block_calling{
+    display: none;
+  }
 }
 
 @media (max-width: 747px) {
+  .main-page_price_card{
+    max-width: 300px;
+    padding: 20px;
+    height: 690px;
+  }
+  .main-page_price_card img{
+    height: 180px;
+  }
+  .main-page_price_card span{
+    font-size: 30px;
+  }
   .main-page_quote .qr-bg_1{
     transform: scale(0.7);
     left: -16%;
@@ -1502,5 +1521,10 @@ footer .site-container{
   }
   .header-menu .qr-bg_2{
     transform: rotate(1deg) scaleX(-1) scaley(-1) scale(0.8);
+  }
+}
+@media (min-height: 767px){
+  .pop-up_container{
+    align-items: center;
   }
 }

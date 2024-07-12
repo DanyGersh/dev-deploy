@@ -7,9 +7,8 @@ import { QRbg } from './QRbg'
 import { PopUp } from './PopUp'
 
 
-export const Header = ({ bio, props }) => {
+export const Header = ({ bio, props, showPopUp, setShowPopUp }) => {
   const [opened, setOpened] = useState(false)
-  const [showPopUp, setShowPopUp] = useState(false)
 
   const isMobile = useMediaQuery({ query: '(max-width: 1126px)' })
 
@@ -28,9 +27,11 @@ export const Header = ({ bio, props }) => {
     isMobile && setOpened(false)
     setShowPopUp(!showPopUp)
     if (showPopUp) {
-      document.body.style.overflow = "auto"
+      if (!isMobile) document.getElementById('headerContainer').style.cssText = "padding-right: 23px;"
+      !isMobile ? document.body.style.cssText = "overflow: auto; padding-right: 0px;" : document.body.style.cssText = "overflow: auto;"
     } else {
-      document.body.style.overflow = "hidden"
+      if (!isMobile) document.getElementById('headerContainer').style.cssText = "padding-right: 40px;"
+      !isMobile ? document.body.style.cssText = "overflow: hidden; padding-right: 17px;" : document.body.style.cssText = "overflow: auto;"
     }
   }
 
@@ -40,8 +41,8 @@ export const Header = ({ bio, props }) => {
         <div className={showPopUp ? "pop-up_container show" : "pop-up_container"}>
           {showPopUp && <PopUp close={handlePopUp}/>}
         </div>
-        <header className={opened && 'opened'}>
-          <div className="site-container">
+        <header className={opened && 'opened'} >
+          <div className="site-container" id='headerContainer'>
             <Link href="/" className='header-logo-link'><img src="/img/header-logo.svg" alt="" /></Link>
             {isMobile && <button className='header_mob-menu' onClick={handleHeader}>
               {!opened ? <img src="/icons/menu.svg" alt="" /> : <img src="/icons/close.svg" alt="" />}

@@ -1,15 +1,18 @@
+'use client'
 import Image from "next/image";
 import { HeroBlock } from "@/components/HeroBlock";
 import { QRbg } from "@/components/QRbg";
 import { Button } from "@/components/Button";
 import { Header } from "@/components/Header";
 import { MainPageFAQ } from "@/components/MainPageFAQ";
-import React from "react";
+import React, { useState } from "react";
 import { Footer } from "@/components/Footer";
 import { PopUp } from "@/components/PopUp";
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
+  const [showPopUp, setShowPopUp] = useState(false)
   const faq = [
     {
       id: 0,
@@ -53,16 +56,12 @@ export default function Home() {
     }
   ]
 
-  //useEffect(async () => {
-  //  const response = await fetch('http://45.132.19.189/api/b/1dc3d30d-6df8-4cc0-ab44-663f931439e4')
-  //  const data = await response.json()
-  //  console.log(data);
-  //}, [])
+  const isMobile = useMediaQuery({ query: '(max-width: 1126px)' });
 
   return (
     <div className="page">
-      <Header />
-      <HeroBlock />
+      <Header showPopUp={showPopUp} setShowPopUp={setShowPopUp}/>
+      <HeroBlock setShowPopUp={setShowPopUp} />
       <div className="main-page_quote">
         <span><b>Страница памяти</b> – это новый шаг современных технологий, позволяющий сохранить историю жизни и наследие усопшего навечно.</span>
         <QRbg />
@@ -75,8 +74,8 @@ export default function Home() {
           <div className="main-page_services_container">
             <p className="service-desc">На надгробии размещается QR код, при сканировании которого , осуществляется переход на страницу памяти усопшего.<br />Благодаря этой технологии будущие поколения смогут узнавать наследие, генеалогическое<br />древо и всю историю жизни своих предков.</p>
             <div className="buttons">
-              <Button type="blue">УЗНАТЬ ПОДРОБНЕЕ / ЗАКАЗАТЬ</Button>
-              <Link href="/bio/1dc3d30d-6df8-4cc0-ab44-663f931439e4#remembers" target="_blank"><Button type="blue">ПРИМЕР СТРАНИЦЫ ПАМЯТИ</Button></Link>
+              <Button type="blue" onClick={() => setShowPopUp(true)}>УЗНАТЬ ПОДРОБНЕЕ / ЗАКАЗАТЬ</Button>
+              <Link href="/bio/1dc3d30d-6df8-4cc0-ab44-663f931439e4" target="_blank"><Button type="blue">ПРИМЕР СТРАНИЦЫ ПАМЯТИ</Button></Link>
             </div>
           </div>
         </div>
@@ -126,7 +125,7 @@ export default function Home() {
               </div>
               <Button className="price-card_btn" type="blue">ЗАКАЗАТЬ</Button>
             </div>
-            <div className="main-page_price_card big">
+            <div className={!isMobile ? "main-page_price_card big" : "main-page_price_card"}>
               <div className="price-card_container">
                 <Image src="/img/price-card-img.jpg" alt="Фотография услуги" width="360" height="245" />
                 <h3>Страница памяти и<br />QR-код индивидуальным дизайном</h3>

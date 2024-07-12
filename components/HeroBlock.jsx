@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from './Button'
 import Image from 'next/image'
 
-export const HeroBlock = (props) => {
+export const HeroBlock = ({setShowPopUp, ...props}) => {
   async function formatDate(dateString, type) {
     const months = [
       'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
@@ -57,7 +57,7 @@ export const HeroBlock = (props) => {
         <div className="hero-block_text">
           <h1>Сохраните навсегда память и наследие о близком человеке и увековечьте ее на нашей странице памяти</h1>
           <p className='hero-block_desc'>Наше Наследие ― онлайн-платформа, где вы можете создавать виртуальные памятные страницы для увековечивания памяти о ваших близких людях</p>
-          <Button>ЗАКАЗАТЬ/УЗНАТЬ ПОДРОБНЕЕ</Button>
+          <Button onClick={() => setShowPopUp(true)}>ЗАКАЗАТЬ/УЗНАТЬ ПОДРОБНЕЕ</Button>
         </div>
         <div className="hero-block_calling">
           <span>УЗНАЙ ПОДРОБНЕЕ</span>
