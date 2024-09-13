@@ -38,31 +38,31 @@ export const HorizontalGallery = ({ children }, props) => {
 }
 
 export const HorizontalGalleryElement = ({ children, data, id }) => {
-  if (data.type === "image") {
+  if (["jpg", "png", "webp", "jpeg"].includes(data.type) && data.is_gallery) {
     return (
       <div className="horizontal-gallery_element">
-        <a href={data.path} target="_blank" className="horizontal-gallery_img-hover">
+        <a href={process.env.NEXT_PUBLIC_SERVER_LINK + data.path} target="_blank" className="horizontal-gallery_img-hover">
           <img className='zoom-icon' src="/icons/zoom.svg" alt="" />
           <h3>{data.filename}</h3>
         </a>
-        <img src={data.path} alt="" loading='lazy' />
+        <img src={process.env.NEXT_PUBLIC_SERVER_LINK + data.path} alt="" loading='lazy' />
       </div>
     )
   }
-  if (data.type === "video") {
+  if (["mp4", "webm", "avi"].includes(data.type) && data.is_gallery) {
     return (
       <div className="horizontal-gallery_element">
-        <video controls preload='metadata' src={data.path} />
-        <h3>Заголовок видео</h3>
+        <video controls preload='metadata' src={process.env.NEXT_PUBLIC_SERVER_LINK + data.path} />
+        <h3>{data.filename}</h3>
         <p>Видео</p>
       </div>
     )
   }
-  if (data.type === "youtube") {
+  if (data.type === "youtube" && data.is_gallery) {
     return (
       <div className="horizontal-gallery_element">
         <iframe src={`https://www.youtube.com/embed/${data.path}?si=2zW68ByVtfJlTv1v`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <h3>Заголовок видео</h3>
+        <h3>{data.filename}</h3>
         <p>Видео с YouTube</p>
       </div>
     )

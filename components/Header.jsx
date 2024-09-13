@@ -7,7 +7,7 @@ import { QRbg } from './QRbg'
 import { PopUp } from './PopUp'
 
 
-export const Header = ({ bio, props, showPopUp, setShowPopUp }) => {
+export const Header = ({ bio, props, showPopUp, setShowPopUp, currentItemCard, setCurrentItemCard }) => {
   const [opened, setOpened] = useState(false)
 
   const isMobile = useMediaQuery({ query: '(max-width: 1126px)' })
@@ -33,13 +33,14 @@ export const Header = ({ bio, props, showPopUp, setShowPopUp }) => {
       if (!isMobile) document.getElementById('headerContainer').style.cssText = "padding-right: 40px;"
       !isMobile ? document.body.style.cssText = "overflow: hidden; padding-right: 17px;" : document.body.style.cssText = "overflow: auto;"
     }
+    setCurrentItemCard(undefined)
   }
 
   if (bio == undefined) {
     return (
       <>
         <div className={showPopUp ? "pop-up_container show" : "pop-up_container"}>
-          {showPopUp && <PopUp close={handlePopUp}/>}
+          {showPopUp && <PopUp close={handlePopUp} currentItemCard={currentItemCard}/>}
         </div>
         <header className={opened && 'opened'} >
           <div className="site-container" id='headerContainer'>
@@ -82,6 +83,7 @@ export const Header = ({ bio, props, showPopUp, setShowPopUp }) => {
               <Link onClick={handleHeader} href="#burial">Захоронение</Link>
               <Link onClick={handleHeader} href="#remembers">Воспоминания</Link>
               <Link onClick={handleHeader} href="#">О мемориале</Link>
+              {isMobile && <Link onClick={handleHeader} href="/">Вернуться на Главную</Link>}
               {isMobile && <QRbg />}
             </nav>
           </div>

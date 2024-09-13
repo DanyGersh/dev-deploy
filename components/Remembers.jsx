@@ -49,8 +49,9 @@ export const RemembersElement = ({ children, data, id }) => {
   return (
     <div className="remembers-gallery_element">
       <div className="remembers-gallery_element_avatar">
-        <img src={data.client.avatar.path} alt="" loading='lazy' />
-        <h2>{data.client.full_name}</h2>
+        {data.client && <img src={process.env.NEXT_PUBLIC_SERVER_LINK + data.client.avatar.path} alt="" loading='lazy' />}
+        {!data.client && <img src="/icons/user.svg" alt="" loading='lazy' />}
+        {data.client && <h2>{data.client.full_name}</h2>}
         <span>{data.who}</span>
       </div>
       <p>{data.text}</p>

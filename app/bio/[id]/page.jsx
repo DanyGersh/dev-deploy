@@ -7,6 +7,8 @@ import { Remembers, RemembersElement } from '@/components/Remembers'
 import { notFound } from 'next/navigation'
 import '../../globals.css';
 import parse from 'html-react-parser';
+import Link from 'next/link'
+import { Button } from '@/components/Button'
 
 async function fetchUser(id) {
   try {
@@ -15,15 +17,16 @@ async function fetchUser(id) {
     });
     if (!res.ok) {
       console.error(`Failed to fetch user: ${res.status} ${res.statusText}`);
+      fetchStatus = res.status;
       return undefined;
     }
     return res.json();
   } catch (error) {
-    console.error('An error occurred while fetching the user:', error);
-    notFound()
+    console.log('An error occurred while fetching the user:', error);
   }
 }
 
+var fetchStatus = 0;
 
 export default async function Info({ params }) {
   //const { id } = useParams()
@@ -89,50 +92,24 @@ export default async function Info({ params }) {
       },
     ]
   }
-
-  let debugRemembers = {
-    "remembers": [
-      {
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. ",
-        "client": {
-          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-          "full_name": "Имя фамилия",
-          "date_birth": "2024-06-27",
-          "avatar": {
-            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "path": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676295972133291028.png",
-            "filename": "string",
-            "type": "string",
-            "is_gallery": true,
-            "created_at": "2024-06-27T10:21:46.358Z"
-          }
-        },
-        "who": "Разработчик"
-      },
-      {
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At volutpat diam ut venenatis tellus in metus vulputate. Integer feugiat scelerisque varius morbi enim. Et netus et malesuada fames ac turpis egestas integer eget. Est ante in nibh mauris cursus. Aliquam id diam maecenas ultricies mi eget mauris. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus metus. Nisl suscipit adipiscing bibendum est ultricies. Sollicitudin tempor id eu nisl nunc mi. Et netus et malesuada fames ac turpis. Malesuada fames ac turpis egestas sed. Viverra adipiscing at in tellus. Nam libero justo laoreet sit amet cursus sit amet dictum. Adipiscing diam donec adipiscing tristique risus nec feugiat. At risus viverra adipiscing at in tellus. Eget aliquet nibh praesent tristique magna sit. Aenean vel elit scelerisque mauris ",
-        "client": {
-          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-          "full_name": "Даниэль Проверкович",
-          "date_birth": "2024-06-27",
-          "avatar": {
-            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "path": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676295972133291028.png",
-            "filename": "string",
-            "type": "string",
-            "is_gallery": true,
-            "created_at": "2024-06-27T10:21:46.358Z"
-          }
-        },
-        "who": "Разработчик"
-      }
-    ]
-  }
+  
 
   let formatedMap = data !== undefined && `https://maps.google.com/maps?q=${data.burial_latitude},${data.burial_longitude}&hl=ru;z=14&amp&output=embed`
 
   if (!data) {
-    notFound()
+    return (
+      <div className="error-page">
+        <div className="text">
+          <h1>{fetchStatus}</h1>
+          <p>
+            {fetchStatus == 404 && "Страница не найдена"}
+            {fetchStatus == 500 && "Внутренняя ошибка сервера"}
+            {fetchStatus == 422 && "Некорректный запрос"}
+          </p>
+        </div>
+        <Link href="/"><Button>Вернуться на главную</Button></Link>
+      </div>
+    )
   } else {
     return (
       <div className='page'>
@@ -224,14 +201,14 @@ export default async function Info({ params }) {
               <h2>ГАЛЕРЕЯ</h2>
             </div>
           </div>
-          {debugGallery.gallery_videos !== undefined && <HorizontalGallery>
-            {debugGallery.gallery_videos.map((elem, index) =>
-              <HorizontalGalleryElement data={elem} id={index} key={index} />
+          {data.files && <HorizontalGallery>
+            {data.files.map((elem, index) =>
+              {elem.is_gallery && elem.type=="youtube" ? <HorizontalGalleryElement data={elem} id={index} key={index} /> : ""}
             )}
           </HorizontalGallery>}
-          {debugGallery.gallery_images !== undefined && <HorizontalGallery>
-            {debugGallery.gallery_images.map((elem, index) =>
-              <HorizontalGalleryElement data={elem} id={index} key={index} />
+          {data.files && <HorizontalGallery>
+            {data.files.map((elem, index) =>
+              <HorizontalGalleryElement data={elem} id={index} key={index}/>
             )}
           </HorizontalGallery>}
         </div>
@@ -278,8 +255,8 @@ export default async function Info({ params }) {
             </div>
           </div>
           <div className="site-container">
-            {debugRemembers.remembers !== undefined && <Remembers>
-              {debugRemembers.remembers.map((elem, index) =>
+            {data.remembers && <Remembers>
+              {data.remembers.map((elem, index) =>
                 <RemembersElement data={elem} id={index} key={index} />
               )}
             </Remembers>}

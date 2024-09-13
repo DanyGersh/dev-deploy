@@ -13,6 +13,7 @@ import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
   const [showPopUp, setShowPopUp] = useState(false)
+  const [currentItemCard, setCurrentItemCard] = useState(undefined)
   const faq = [
     {
       id: 0,
@@ -58,9 +59,14 @@ export default function Home() {
 
   const isMobile = useMediaQuery({ query: '(max-width: 1126px)' });
 
+  function callItemCard(item){
+    setShowPopUp(true)
+    setCurrentItemCard(item)
+  }
+
   return (
     <div className="page">
-      <Header showPopUp={showPopUp} setShowPopUp={setShowPopUp}/>
+      <Header showPopUp={showPopUp} currentItemCard={currentItemCard} setCurrentItemCard={setCurrentItemCard} setShowPopUp={setShowPopUp}/>
       <HeroBlock setShowPopUp={setShowPopUp} />
       <div className="main-page_quote">
         <span><b>Страница памяти</b> – это новый шаг современных технологий, позволяющий сохранить историю жизни и наследие усопшего навечно.</span>
@@ -123,7 +129,7 @@ export default function Home() {
                 <p>Клеящая основа в комплекте</p>
                 <p>Платная доставка</p>
               </div>
-              <Button className="price-card_btn" type="blue">ЗАКАЗАТЬ</Button>
+              <Button className="price-card_btn" onClick={() => callItemCard('Страница памяти и QR-код на металлической основе')} type="blue">ЗАКАЗАТЬ</Button>
             </div>
             <div className={!isMobile ? "main-page_price_card big" : "main-page_price_card"}>
               <div className="price-card_container">
@@ -137,7 +143,7 @@ export default function Home() {
                 <p>Клеящая основа в комплекте</p>
                 <p>Бесплатная доставка по Москве</p>
               </div>
-              <Button className="price-card_btn" type="blue">ЗАКАЗАТЬ</Button>
+              <Button className="price-card_btn" onClick={() => callItemCard('Страница памяти и QR-код индивидуальным дизайном')} type="blue">ЗАКАЗАТЬ</Button>
             </div>
             <div className="main-page_price_card">
               <div className="price-card_container">
@@ -150,7 +156,7 @@ export default function Home() {
                 <p>Клеящая основа в комплекте</p>
                 <p>Платная доставка</p>
               </div>
-              <Button className="price-card_btn" type="blue">ЗАКАЗАТЬ</Button>
+              <Button className="price-card_btn" onClick={() => callItemCard('Страница памяти и 3D QR-код на пластиковой основе')} type="blue">ЗАКАЗАТЬ</Button>
             </div>
           </div>
         </div>

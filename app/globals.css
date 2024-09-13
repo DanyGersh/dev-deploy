@@ -495,6 +495,9 @@ header .img{
   margin-top: 20px;
 }
 
+footer .mob-copyright{
+  display: none;
+}
 footer.blue{
   background-color: #19426A;
 }
@@ -901,6 +904,7 @@ footer .site-container{
   width: 100px;
   height: 100px;
   border-radius: 100px;
+  object-fit: cover;
 }
 .remembers-gallery_element_avatar h2{
   color: white;
@@ -928,6 +932,7 @@ footer .site-container{
   font-size: 18px;
   text-align: center;
   padding: 0px 80px;
+  white-space:pre-wrap;
 }
 .remembers-gallery_arrows{
   display: flex;
@@ -1201,6 +1206,29 @@ footer .site-container{
   height: 335px !important;
 }
 
+.error-page{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.error-page .text{
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.error-page h1{
+  padding-right: 20px;
+  border-right: 1px solid white;
+  color: white;
+}
+.error-page p{
+  margin-left: 20px;
+  color: white;
+}
+
 
 #epitaph,
 #short_info,
@@ -1462,6 +1490,7 @@ footer .site-container{
     text-align: center;
   }
   footer .mob-copyright{
+    display: block;
     width: 100%;
     text-align: center;
     margin-top: 15px;
@@ -1521,6 +1550,14 @@ footer .site-container{
   }
   .header-menu .qr-bg_2{
     transform: rotate(1deg) scaleX(-1) scaley(-1) scale(0.8);
+  }
+  .pop-up_container{
+    padding: 0;
+  }
+  .pop-up{
+    width: 100%;
+    border: none;
+    border-radius: 0;
   }
 }
 @media (min-height: 767px){

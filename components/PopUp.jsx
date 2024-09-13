@@ -3,12 +3,12 @@
 import React, { useState } from 'react'
 import { Button } from './Button'
 
-export const PopUp = ({close, ...props}) => {
+export const PopUp = ({close, currentItemCard, ...props}) => {
   const [type, setType] = useState("email");
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState(currentItemCard && 'Товар: ' + currentItemCard);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false)
 
@@ -112,7 +112,7 @@ export const PopUp = ({close, ...props}) => {
         <input type="text" placeholder='Например, example@mail.ru' value={email} onChange={(e) => setEmail(e.target.value)}/>
       </div> : ""}
       <div className="pop-up_textarea">
-        <h3 className='pop-up_label'>Введите Ваш Email *</h3>
+        <h3 className='pop-up_label'>Введите Ваш Комментарий *</h3>
         <textarea placeholder='Комментарий' value={comment} onChange={(e) => setComment(e.target.value)}></textarea>
       </div>
       <div className="pop-up_agreement">
