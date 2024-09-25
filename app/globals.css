@@ -840,7 +840,7 @@ footer .site-container{
 }
 .horizontal-gallery_element:hover .horizontal-gallery_img-hover{
   opacity: 1;
-  pointer-events: all;
+  pointer-events: none;
   cursor: pointer;
 }
 .horizontal-gallery_img-hover{
@@ -1002,6 +1002,14 @@ footer .site-container{
   opacity: 0;
   pointer-events: none;
   transition: opacity, .2s ease;
+  left: 0;
+  top: 0;
+}
+.pop-up_container .bio-photo_full{
+  padding: 10px;
+  object-fit: contain;
+  width: 100%;
+  max-width: max-content;
 }
 .pop-up_container.show{
   opacity: 1;
@@ -1563,5 +1571,8 @@ footer .site-container{
 @media (min-height: 767px){
   .pop-up_container{
     align-items: center;
+  }
+  .pop-up_container.img{
+    align-items: normal;
   }
 }

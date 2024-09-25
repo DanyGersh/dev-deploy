@@ -216,7 +216,7 @@ export default async function Info({ params }) {
           <div className="site-container">
             <div className="page-section_header bio">
               <h2>ЗАХОРОНЕНИЕ</h2>
-              <p>{data.burial_landmark}</p>
+              <p>{}</p>
             </div>
             <div className="bio-page_burial_container" id='burial'>
               <div className="bio-page_burial_left">
@@ -238,7 +238,7 @@ export default async function Info({ params }) {
                   <img src="/icons/search_L.svg" alt="" />
                   <div className="text">
                     <h3>Ориентир:</h3>
-                    <p>{data.burial_reference}</p>
+                    <p>{data.burial_landmark}</p>
                   </div>
                 </div>
               </div>

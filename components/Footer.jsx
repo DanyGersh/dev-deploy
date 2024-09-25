@@ -33,7 +33,7 @@ export const Footer = (props) => {
           </div>
           <div className="footer-right">
             <h3>Перед приобретением вы можете ознакомится<br />с примером будущей страницы памяти</h3>
-            <Button type="blue">УЗНАТЬ ПОДРОБНЕЕ/ЗАКАЗАТЬ</Button>
+            <Button type="blue" onClick={props.setShowPopUp}>УЗНАТЬ ПОДРОБНЕЕ/ЗАКАЗАТЬ</Button>
             <Link href="/bio/1dc3d30d-6df8-4cc0-ab44-663f931439e4"><Button type="blue">ПРИМЕР СТРАНИЦА ПАМЯТИ</Button></Link>
           </div>
         </div>

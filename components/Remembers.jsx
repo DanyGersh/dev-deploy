@@ -3,27 +3,38 @@ import React, { useRef, useState } from 'react'
 
 export const Remembers = ({ children }, props) => {
   const ref = useRef(null)
-  const [currentElem, setSurrentElem] = useState(0)
+  const [currentElem, setCurrentElem] = useState(0)
+  const [canScroll, setCanScroll] = useState(true)
 
   function scroll(to) {
+    const itemCount = ref.current.children.length;
+  
     if (to === 'right') {
-      requestAnimationFrame(() => {
-        const scrollLeft = ref.current.scrollLeft;
-        const itemWidth = parseInt(
-          getComputedStyle(ref.current.children[0]).width
-        );
-        ref.current.scrollLeft = scrollLeft + itemWidth;
-        setSurrentElem(currentElem+1)
-      });
+      if (currentElem < itemCount - 1 && canScroll) {
+        setCanScroll(false)
+        requestAnimationFrame(() => {
+          const scrollLeft = ref.current.scrollLeft;
+          const itemWidth = parseInt(
+            getComputedStyle(ref.current.children[currentElem]).width
+          );
+          ref.current.scrollLeft = scrollLeft + itemWidth;
+          setCurrentElem(currentElem + 1);  
+          setTimeout(() => setCanScroll(true), 800)
+        });
+      }
     } else {
-      requestAnimationFrame(() => {
-        const scrollLeft = ref.current.scrollLeft;
-        const itemWidth = parseInt(
-          getComputedStyle(ref.current.children[0]).width
-        );
-        ref.current.scrollLeft = scrollLeft - itemWidth;
-        setSurrentElem(currentElem>0 && currentElem-1)
-      });
+      if (currentElem > 0 && canScroll) {
+        setCanScroll(false)
+        requestAnimationFrame(() => {
+          const scrollLeft = ref.current.scrollLeft;
+          const itemWidth = parseInt(
+            getComputedStyle(ref.current.children[currentElem]).width
+          );
+          ref.current.scrollLeft = scrollLeft - itemWidth;
+          setCurrentElem(currentElem - 1);
+          setTimeout(() => setCanScroll(true), 800)
+        });
+      }
     }
   }
 

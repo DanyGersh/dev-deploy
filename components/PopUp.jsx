@@ -16,7 +16,7 @@ export const PopUp = ({close, currentItemCard, ...props}) => {
   headers.set('Authorization', 'Basic ' + btoa("admin_front" + ":" + "gf54GH3gpxM3"));
 
   async function SendRequest(data){
-    fetch(process.env.NEXT_PUBLIC_API_LINK + "orders/", {
+    fetch(process.env.NEXT_PUBLIC_API_LINK + "orders", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

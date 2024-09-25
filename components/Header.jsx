@@ -7,7 +7,7 @@ import { QRbg } from './QRbg'
 import { PopUp } from './PopUp'
 
 
-export const Header = ({ bio, props, showPopUp, setShowPopUp, currentItemCard, setCurrentItemCard }) => {
+export const Header = ({ bio, props, showPopUp, showImgPopUp, setShowPopUp, currentItemCard, setCurrentItemCard, imgLink }) => {
   const [opened, setOpened] = useState(false)
 
   const isMobile = useMediaQuery({ query: '(max-width: 1126px)' })

@@ -196,7 +196,7 @@ export default function Home() {
           <QRbg type="contacts" />
         </div>
       </div>
-      <Footer />
+      <Footer setShowPopUp={setShowPopUp} />
     </div>
   );
 }

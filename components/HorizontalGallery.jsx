@@ -24,16 +24,35 @@ export const HorizontalGallery = ({ children }, props) => {
     }
   }
 
+  const [showImgPopUp, setShowImgPopUp] = useState(false)
+  const [imgLink, setImgLink] = useState("")
+
+  function handlePopUp(e) {
+    e.target.tagName !== 'IMG' && setShowImgPopUp(false)
+  }
+
+  function showImg(e, link) {
+    if(e.target.tagName === "IMG" && e.target.className=="hge_img"){
+      setImgLink(link)
+      setShowImgPopUp(true)
+    }
+  }
+
   return (
-    <div className='horizontal-gallery'>
-      <div className="horizontal-gallery_container" ref={ref} id='horizontal-gallery_container'>
-        {children}
+    <>
+      <div className={showImgPopUp ? "pop-up_container show img" : "pop-up_container img"} onClick={(e) => handlePopUp(e)}>
+        <img className='bio-photo_full' src={imgLink} alt="" />
       </div>
-      <div className="horizontal-gallery_arrows">
-        <img onClick={() => scroll('left')} src="/icons/arrow_left.svg" alt="" />
-        <img onClick={() => scroll('right')} src="/icons/arrow_right.svg" alt="" />
+      <div className='horizontal-gallery' onClick={(e) => showImg(e, e.target.src)}>
+        <div className="horizontal-gallery_container" ref={ref} id='horizontal-gallery_container'>
+          {children}
+        </div>
+        <div className="horizontal-gallery_arrows">
+          <img className='hg_arrow' onClick={() => scroll('left')} src="/icons/arrow_left.svg" alt="" />
+          <img className='hg_arrow' onClick={() => scroll('right')} src="/icons/arrow_right.svg" alt="" />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
@@ -41,11 +60,11 @@ export const HorizontalGalleryElement = ({ children, data, id }) => {
   if (["jpg", "png", "webp", "jpeg"].includes(data.type) && data.is_gallery) {
     return (
       <div className="horizontal-gallery_element">
-        <a href={process.env.NEXT_PUBLIC_SERVER_LINK + data.path} target="_blank" className="horizontal-gallery_img-hover">
+        <div className="horizontal-gallery_img-hover">
           <img className='zoom-icon' src="/icons/zoom.svg" alt="" />
           <h3>{data.filename}</h3>
-        </a>
-        <img src={process.env.NEXT_PUBLIC_SERVER_LINK + data.path} alt="" loading='lazy' />
+        </div>
+        <img className='hge_img' src={process.env.NEXT_PUBLIC_SERVER_LINK + data.path} alt="" loading='lazy' />
       </div>
     )
   }
