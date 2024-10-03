@@ -41,6 +41,7 @@ export const HorizontalGallery = ({ children }, props) => {
   return (
     <>
       <div className={showImgPopUp ? "pop-up_container show img" : "pop-up_container img"} onClick={(e) => handlePopUp(e)}>
+        <button className='pop-up_close'><img src="/icons/close.svg" alt="" /></button>
         <img className='bio-photo_full' src={imgLink} alt="" />
       </div>
       <div className='horizontal-gallery' onClick={(e) => showImg(e, e.target.src)}>

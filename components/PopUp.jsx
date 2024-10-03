@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { Button } from './Button'
+import Link from 'next/link';
 
 export const PopUp = ({close, currentItemCard, ...props}) => {
   const [type, setType] = useState("email");
@@ -78,7 +79,7 @@ export const PopUp = ({close, currentItemCard, ...props}) => {
           full_name: name,
           email: type==="email" || type==="both" ? email : "Не указано",
           phone: type==="phone" || type==="both" ? phone : "Не указано",
-          product_name: "Продукт",
+          product_name: currentItemCard,
           comment: comment.trim()
         })
       } else {
@@ -116,7 +117,7 @@ export const PopUp = ({close, currentItemCard, ...props}) => {
         <textarea placeholder='Комментарий' value={comment} onChange={(e) => setComment(e.target.value)}></textarea>
       </div>
       <div className="pop-up_agreement">
-        <p>Нажимая на кнопку "Заказать", я даю свое согласие на обработку персональных данных и соглашаюсь с условиями <a href="#">Политики конфиденциальности</a></p>
+        <p>Нажимая на кнопку "Заказать", я даю свое согласие на обработку персональных данных и соглашаюсь с условиями <Link href="/privacy">Политики конфиденциальности</Link></p>
       </div>
       {error && <div className="pop-up_danger">
         <p>Вы не заполнили все необходимые поля</p>

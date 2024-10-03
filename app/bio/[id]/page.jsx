@@ -45,54 +45,8 @@ export default async function Info({ params }) {
 
     return `${day} ${month} ${year}`;
   }
-
-  let debugGallery = {
-    gallery_videos: [
-      {
-        path: "https://video-previews.elements.envatousercontent.com/h264-video-previews/49b9f938-fe01-4c3d-89b3-83c3f996d380/10528286.mp4",
-        type: "video",
-        filename: "Заголовок видео"
-      },
-      {
-        path: "b5Fh7TaTkEU",
-        type: "youtube",
-        filename: "Заголовок видео"
-      },
-      {
-        path: "https://video-previews.elements.envatousercontent.com/h264-video-previews/49b9f938-fe01-4c3d-89b3-83c3f996d380/10528286.mp4",
-        type: "video",
-        filename: "Заголовок видео"
-      },
-      {
-        path: "b5Fh7TaTkEU",
-        type: "youtube",
-        filename: "Заголовок видео"
-      }
-    ],
-    gallery_images: [
-      {
-        path: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
-        type: "image",
-        filename: "Заголовок изображения"
-      },
-      {
-        path: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
-        type: "image",
-        filename: "Заголовок изображения"
-      },
-      {
-        path: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
-        type: "image",
-        filename: "Заголовок изображения"
-      },
-      {
-        path: "https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
-        type: "image",
-        filename: "Заголовок изображения"
-      },
-    ]
-  }
   
+  console.log(data.files)
 
   let formatedMap = data !== undefined && `https://maps.google.com/maps?q=${data.burial_latitude},${data.burial_longitude}&hl=ru;z=14&amp&output=embed`
 
@@ -195,7 +149,7 @@ export default async function Info({ params }) {
             {parse(data.content)}
           </div>
         </div>
-        <div className="bio-page_burial section">
+        {data.files.some(item => item.is_gallery === true) && <div className="bio-page_burial section">
           <div className="site-container">
             <div className="page-section_header bio" id='gallery'>
               <h2>ГАЛЕРЕЯ</h2>
@@ -211,7 +165,7 @@ export default async function Info({ params }) {
               <HorizontalGalleryElement data={elem} id={index} key={index}/>
             )}
           </HorizontalGallery>}
-        </div>
+        </div>}
         <div className="bio-page_burial section">
           <div className="site-container">
             <div className="page-section_header bio">
