@@ -1,13 +1,16 @@
+'use client'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { HeroBlock } from '@/components/HeroBlock'
+import { useState } from 'react'
 
-
-export default async function About() {
+export default function About() {
+  const [showPopUp, setShowPopUp] = useState(false)
+  const [currentItemCard, setCurrentItemCard] = useState(undefined)
 
   return (
     <div className='about page'>
-      <Header />
+      <Header showPopUp={showPopUp} currentItemCard={currentItemCard} setCurrentItemCard={setCurrentItemCard} setShowPopUp={setShowPopUp}/>
       <div className="about-us-page section">
         <div className="site-container">
           <div className="page-section_header">
@@ -20,7 +23,7 @@ export default async function About() {
             A condimentum vitae sapien pellentesque. Odio eu feugiat pretium nibh. Eget gravida cum sociis natoque penatibus et magnis. Enim ut sem viverra aliquet eget sit amet tellus cras. Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque. Faucibus scelerisque eleifend donec pretium. In aliquam sem fringilla ut morbi. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim. Id semper risus in hendrerit gravida rutrum quisque. Egestas diam in arcu cursus. Sit amet consectetur adipiscing elit. Dui id ornare arcu odio ut sem nulla pharetra. Gravida cum sociis natoque penatibus et magnis dis parturient. A diam sollicitudin tempor id eu. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla.</p>
         </div>
       </div>
-      <Footer />
+      <Footer setShowPopUp={setShowPopUp} />
     </div>
   )
 }
